@@ -28,7 +28,7 @@ const bcrypt = require('bcrypt');
 // }));
 
 // Version 2 - simplify
-timeInSeconds = 90*24*60*60;
+
 app.use(helmet({
   hidePoweredBy: true,
   
@@ -41,7 +41,7 @@ app.use(helmet({
   ieNoOpen: true,
 
   hsts: { 
-    maxAge: timeInSeconds ,
+    maxAge: 90*24*60*60 ,
     force : true
   },
 
