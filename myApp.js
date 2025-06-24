@@ -1,8 +1,8 @@
 const express = require('express');
 const app = express();
 
-helmet = require('helmet');
-bcrypt = require('bcrypt');
+const helmet = require('helmet');
+const bcrypt = require('bcrypt');
 
 
 // Version 1
