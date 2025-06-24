@@ -35,11 +35,11 @@ app.use(helmet({
   xssFilter: true,
   ieNoOpen: true,
 
-  timeInSeconds : 90*24*60*60,
   hsts: { 
-    maxAge: timeInSeconds ,
+    maxAge: 90*24*60*60 ,
     force : true
   },
+  
   dnsPrefetchControl: true,
   noCache: true,
   contentSecurityPolicy: {    // enable and configure
