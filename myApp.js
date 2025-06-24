@@ -24,6 +24,7 @@ helmet = require('helmet');
 // }));
 
 
+timeInSeconds = 90*24*60*60;
 app.use(helmet({
   hidePoweredBy: true,
   
@@ -36,10 +37,10 @@ app.use(helmet({
   ieNoOpen: true,
 
   hsts: { 
-    maxAge: 90*24*60*60 ,
+    maxAge: timeInSeconds ,
     force : true
   },
-  
+
   dnsPrefetchControl: true,
   noCache: true,
   contentSecurityPolicy: {    // enable and configure
