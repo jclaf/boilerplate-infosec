@@ -27,6 +27,8 @@ app.use(helmet.contentSecurityPolicy({
   }
 }));
 
+const bcrypt = require('bcrypt');
+
 // Version 2 - simplify
 
 // app.use(helmet({
