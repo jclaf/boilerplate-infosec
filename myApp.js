@@ -1,8 +1,8 @@
 const express = require('express');
 const app = express();
 
-//const helmet = require('helmet');
-const bcrypt = require('bcrypt');
+const helmet = require('helmet');
+
 
 
 // Version 1
@@ -29,31 +29,31 @@ const bcrypt = require('bcrypt');
 
 // Version 2 - simplify
 
-// app.use(helmet({
-//   hidePoweredBy: true,
+app.use(helmet({
+  hidePoweredBy: true,
   
-//   frameguard: {         // configure
-//     action: 'deny'
-//   },
+  frameguard: {         // configure
+    action: 'deny'
+  },
  
-//   noSniff: true,
-//   xssFilter: true,
-//   ieNoOpen: true,
+  noSniff: true,
+  xssFilter: true,
+  ieNoOpen: true,
 
-//   hsts: { 
-//     maxAge: 90*24*60*60 ,
-//     force : true
-//   },
+  hsts: { 
+    maxAge: 90*24*60*60 ,
+    force : true
+  },
 
-//   dnsPrefetchControl: true,
-//   noCache: true,
-//   contentSecurityPolicy: {    // enable and configure
-//     directives: {
-//       defaultSrc: ["'self'"],
-//       scriptSrc: ["'self'",'trusted-cdn.com'],
-//     }
-//   },
-// }))
+  dnsPrefetchControl: true,
+  noCache: true,
+  contentSecurityPolicy: {    // enable and configure
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: ["'self'",'trusted-cdn.com'],
+    }
+  },
+}))
 
 
 
