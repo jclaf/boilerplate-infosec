@@ -6,54 +6,54 @@ const bcrypt = require('bcrypt');
 
 
 // Version 1
-// app.use(helmet.hidePoweredBy());
-// app.use(helmet.frameguard({ action: 'deny' }));
-// app.use(helmet.xssFilter());
-// app.use(helmet.noSniff());
-// app.use(helmet.ieNoOpen());
+app.use(helmet.hidePoweredBy());
+app.use(helmet.frameguard({ action: 'deny' }));
+app.use(helmet.xssFilter());
+app.use(helmet.noSniff());
+app.use(helmet.ieNoOpen());
 
-// timeInSeconds = 90*24*60*60;
-// app.use(helmet.hsts({ maxAge: timeInSeconds ,  force : true}));
+timeInSeconds = 90*24*60*60;
+app.use(helmet.hsts({ maxAge: timeInSeconds ,  force : true}));
 
-// app.use(helmet.dnsPrefetchControl());
+app.use(helmet.dnsPrefetchControl());
 
-// app.use(helmet.noCache());
+app.use(helmet.noCache());
 
 
-// app.use(helmet.contentSecurityPolicy({
-//   directives: {
-//     defaultSrc: ["'self'"],
-//     scriptSrc: ["'self'",'trusted-cdn.com'],
-//   }
-// }));
+app.use(helmet.contentSecurityPolicy({
+  directives: {
+    defaultSrc: ["'self'"],
+    scriptSrc: ["'self'",'trusted-cdn.com'],
+  }
+}));
 
 // Version 2 - simplify
 
-app.use(helmet({
-  hidePoweredBy: true,
+// app.use(helmet({
+//   hidePoweredBy: true,
   
-  frameguard: {         // configure
-    action: 'deny'
-  },
+//   frameguard: {         // configure
+//     action: 'deny'
+//   },
  
-  noSniff: true,
-  xssFilter: true,
-  ieNoOpen: true,
+//   noSniff: true,
+//   xssFilter: true,
+//   ieNoOpen: true,
 
-  hsts: { 
-    maxAge: 90*24*60*60 ,
-    force : true
-  },
+//   hsts: { 
+//     maxAge: 90*24*60*60 ,
+//     force : true
+//   },
 
-  dnsPrefetchControl: true,
-  noCache: true,
-  contentSecurityPolicy: {    // enable and configure
-    directives: {
-      defaultSrc: ["'self'"],
-      scriptSrc: ["'self'",'trusted-cdn.com'],
-    }
-  },
-}))
+//   dnsPrefetchControl: true,
+//   noCache: true,
+//   contentSecurityPolicy: {    // enable and configure
+//     directives: {
+//       defaultSrc: ["'self'"],
+//       scriptSrc: ["'self'",'trusted-cdn.com'],
+//     }
+//   },
+// }))
 
 
 
