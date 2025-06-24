@@ -28,6 +28,20 @@ app.use(helmet.contentSecurityPolicy({
 }));
 
 
+const saltRounds = 12; // Secure cost factor
+
+// Example usage: Hash a password (for demonstration)
+const myPlaintextPassword = 'superSecret123';
+
+bcrypt.hash(myPlaintextPassword, saltRounds, function(err, hash) {
+  if (err) {
+    console.error('Error hashing password:', err);
+  } else {
+    console.log('Hashed password:', hash);
+    // You can store this hash in your database
+  }
+});
+
 
 // Version 2 - simplify
 
