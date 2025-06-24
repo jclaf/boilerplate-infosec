@@ -2,6 +2,10 @@ const express = require('express');
 const app = express();
 
 helmet = require('helmet');
+bcrypt = require('bcrypt');
+
+
+// Version 1
 // app.use(helmet.hidePoweredBy());
 // app.use(helmet.frameguard({ action: 'deny' }));
 // app.use(helmet.xssFilter());
@@ -23,7 +27,7 @@ helmet = require('helmet');
 //   }
 // }));
 
-
+// Version 2 - simplify
 timeInSeconds = 90*24*60*60;
 app.use(helmet({
   hidePoweredBy: true,
@@ -49,11 +53,7 @@ app.use(helmet({
       scriptSrc: ["'self'",'trusted-cdn.com'],
     }
   },
-  
-  
-    
 }))
-
 
 
 
